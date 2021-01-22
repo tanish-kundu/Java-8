@@ -6,12 +6,15 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 /**
- * Abstraction is the process of exposing the essential details of an entity, while ignoring the irrelevant details, to reduce the complexity for the users.
+ * Abstraction is the process of exposing the essential details of an entity, while ignoring the irrelevant details,
+ * to reduce the complexity for the users.
  * Encapsulation is the process of bundling data and operations on the data together in an entity.
  * Inheritance is used to derive a new type from an existing type, thereby establishing a parent-child relationship.
  * Polymorphism lets an entity take on different meanings in different contexts.
  *
- * Generics add stability to your code by making more of your bugs detectable at compile time
+ * Generics add stability to your code by making more of your bugs detectable at compile time. Provides type safety.
+ *
+ *  wildcards in generics ?
  *
  * Collection<?> coll = new ArrayList<String>();
  * //OR
@@ -83,7 +86,7 @@ public class Java8Features {
 
         // Sequential
         numberList.stream()
-                .filter(n -> n%2  == 0)
+                .filter(n -> n%2  == 0) // takes a predicate
                 .forEach( action );
 
         // Parallel
@@ -114,7 +117,7 @@ public class Java8Features {
 
         // .map(String::toUpperCase) : converts each element in the stream into another object via the given function
 
-        //boolean matchedResult = memberNames.stream()
+        // boolean matchedResult = memberNames.stream()
         //        .anyMatch((s) -> s.startsWith("A"));
 
         List<String> memberNames = new ArrayList<>();
@@ -146,7 +149,7 @@ public class Java8Features {
         Integer[] evenNumbersArr = st.filter(i -> i%2 == 0).toArray(Integer[]::new);
         System.out.print(evenNumbersArr);
 
-        // Boxed Streams: for primitieves we need to box first
+        // Boxed Streams: for primitives we need to box first
         //Get the collection and later convert to stream to process elements
         List<Integer> ints = IntStream.of(1,2,3,4,5)
                 .boxed()
@@ -189,14 +192,18 @@ public class Java8Features {
         public abstract void run();
 
         // any numbers of default methods can be added in functional interfaces
-        // You can define static default methods in interface
-        // Dafault methods implemented to enable the functionality of lambda expression in java
+        // You can define static / default methods in interface
+        // Default methods implemented to enable the functionality of lambda expression in java
         default void doSomeMoreWork1(){
             //Method body
         }
 
         default void doSomeMoreWork2(){
             //Method body
+        }
+
+        static void meth(){
+
         }
 
     }
