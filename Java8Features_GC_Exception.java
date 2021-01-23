@@ -77,6 +77,23 @@ public class Java8Features {
         map.put("C", 3);
 
         map.forEach(biConsumer);
+        
+        //Supplier is functional interface which does not take any argument and produces result of type T.
+        //It has a functional method called T get() As Supplier is functional interface, 
+        //so it can be used as assignment target for lambda expressions.
+         Supplier<String> supplier= ()-> "Arpit";
+          System.out.println(supplier.get());
+        
+        @FunctionalInterface
+public interface Supplier<T> {
+    /**
+     * Gets a result.
+     *
+     * @return a result
+     */
+    T get();
+}
+        
 
         // forEach: Provides no ordering guarantees, can be used in sequential streams
         // forEachOrdered: provides ordering, can be used in parallel streams
