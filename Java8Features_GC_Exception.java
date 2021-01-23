@@ -27,6 +27,9 @@ import java.util.stream.Stream;
  * MEMORY - MANAGEMENT: YOUNG GEN(EDEN, SURVIVOR S0, SURVIVOR S1)[MINOR GC];
  *                      OLD GENERATION (MAJOR GC)
  *                      PERM MEMORY(BEFORE JAVA 8, REMOVED IN JAVA 8): THIS WAS EXCLUDING FROM HEAP MEMORY
+ 
+ singleton pattern
+ design patterns in java
  *
  */
 public class Java8Features {
